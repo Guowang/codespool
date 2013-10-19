@@ -6,13 +6,22 @@
 //
 //vector<int> ZAlgorithm(string);
 //
+//int similarity(string);
+//
 //int main() {
-//    string s = "aabaaaba";
-//    vector<int> v = ZAlgorithm(s);
-//    
-//    for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) 
-//        cout<< *it << " ";
-//    cout<<endl;
+////    string s = "aabaaaba";
+////    vector<int> v = ZAlgorithm(s);
+////    
+////    for (vector<int>::iterator it = v.begin(); it != v.end(); ++it) 
+////        cout<< *it << " ";
+////    cout<<endl;
+//    int n;
+//    cin >> n;
+//    for (int i = 0; i < n; i++) {
+//        string str;
+//        cin >> str;
+//        cout << similarity(str) <<endl;
+//    }
 //    
 //    return 0;
 //}
@@ -41,4 +50,17 @@
 //    }
 //    
 //    return v;
+//}
+//
+//int similarity(string s) {
+//    if (s.length() == 0 || s.length() == 1) 
+//        return s.length();
+//    vector<int> v = ZAlgorithm(s);
+//    
+//    int sum = 0;
+//    
+//    for (vector<int>::iterator it = v.begin(); it != v.end(); ++it)
+//        sum += *it;
+//    
+//    return sum;
 //}

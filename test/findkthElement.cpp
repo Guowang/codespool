@@ -20,11 +20,12 @@
 //    if ((k <= alen + blen) && (alen >= 0) && (blen >= 0) && (alen + blen > 0)) {
 //        int i = (int) ((double) alen / (alen + blen) * k);
 //        int j = k - 1 - i;
-//        
-//        double ai = (i >= alen) ? numeric_limits<double>::max( ) : a[i]; 
-//        double ai_1 = (i <= 0) ? numeric_limits<double>::min( ) : a[i - 1]; 
-//        double bj = (j >= blen) ? numeric_limits<double>::max( ) : b[j]; 
-//        double bj_1 = (j <= 0) ? numeric_limits<double>::min( ) : b[j - 1]; 
+//        if (alen == 0) return b[k - 1];
+//        if (blen == 0) return a[k - 1];
+//        double ai = (i >= alen) ? numeric_limits<double>::max() : a[i];
+//        double ai_1 = (i <= 0) ? numeric_limits<double>::min() : a[i - 1];
+//        double bj = (j >= blen) ? numeric_limits<double>::max() : b[j];
+//        double bj_1 = (j <= 0) ? numeric_limits<double>::min() : b[j - 1]; 
 //        
 //        if (bj_1 <= ai && ai <= bj) {
 //            return ai;
@@ -34,7 +35,7 @@
 //        }
 //        
 //        if (ai > bj)
-//            return findkthElement(a, i - 1, b + j + 1, blen - (j + 1), k - (j + 1));
+//            return findkthElement(a, i, b + j + 1, blen - (j + 1), k - (j + 1));
 //        else
 //            return findkthElement(a + i + 1, alen - (i + 1), b, j + 1, k - (i + 1));
 //
